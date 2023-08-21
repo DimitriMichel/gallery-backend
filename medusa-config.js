@@ -53,11 +53,13 @@ const plugins = [
     },
   },
   {
-    resolve: `medusa-file-supabase`,
+    resolve: `medusa-file-s3`,
     options: {
-      project_ref: `${process.env.PROJECT_REF}`,
-      service_key: `${process.env.SERVICE_KEY}`,
-      bucket_name: `${process.env.BUCKET_NAME}`,
+        s3_url: process.env.S3_URL,
+        bucket: process.env.S3_BUCKET,
+        region: process.env.S3_REGION,
+        access_key_id: process.env.S3_ACCESS_KEY_ID,
+        secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
     },
   },
 ];
