@@ -62,6 +62,7 @@ const plugins = [
         secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
     },
   },
+
 ];
 
 const modules = {
