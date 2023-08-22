@@ -56,8 +56,8 @@ const plugins = [
     resolve: `medusa-file-supabase`,
     options: {
       project_ref: process.env.PROJECT_REF,
-      service_key: process.env.SERVICE_KEY,
       bucket_name: process.env.BUCKET_NAME,
+      service_key: process.env.SERVICE_KEY,
     },
   },
 
