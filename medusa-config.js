@@ -94,11 +94,15 @@ const modules = {
 const projectConfig = {
   jwtSecret: process.env.JWT_SECRET,
   cookieSecret: process.env.COOKIE_SECRET,
-  store_cors: STORE_CORS,
+  redis_url: REDIS_URL,
   database_url: DATABASE_URL,
+  database_type: "postgres",
+  store_cors: STORE_CORS,
   admin_cors: ADMIN_CORS,
-  // Uncomment the following lines to enable REDIS
-  // redis_url: REDIS_URL
+  database_extra:
+    process.env.NODE_ENV !== "development"
+      ? { ssl: { rejectUnauthorized: false } }
+      : {},
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
