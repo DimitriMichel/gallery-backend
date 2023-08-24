@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "clean": "cross-env ./node_modules/.bin/rimraf dist",
-    "build:server": "cross-env npm run clean && tsc -p tsconfig.json",
+    "build:server": "NODE_OPTIONS=\"--max-old-space-size=8192\" cross-env npm run clean && tsc -p tsconfig.json",
     "build:admin": "medusa-admin build --deployment",
     "watch": "cross-env tsc --watch",
     "test": "cross-env jest",
@@ -26,7 +26,7 @@
     "start": "medusa develop",
     "heroku-postbuild": "medusa migrations run",
     "prepare": "npm run build",
-    "build": "babel src -d dist --extensions \".ts,.js\""
+    "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" babel src -d dist --extensions \".ts,.js\""
   },
   "dependencies": {
     "@medusajs/admin": "^7.0.0",
